@@ -4,7 +4,7 @@ let width = innerWidth;
 let height = innerHeight;
 let images = [];
 let lines = [];
-
+let score = 0;
 function setup() {
     
     createCanvas(width,height);
@@ -21,7 +21,7 @@ function setup() {
   }
       //Boucle pour load images planétes
    
-    player = new Car(width/2,height*0.8,images[0]);
+    player = new Car(width/2,height*0.66,images[0]);
 }
 
 
@@ -37,7 +37,7 @@ for(let line of lines){
 }
     
     textSize(25);
-    text("Score : 0", width /2, height /10);
+    text("Score : " + score, width /2, height /10);
     
     player.display();
     
