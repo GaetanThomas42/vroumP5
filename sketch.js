@@ -28,7 +28,7 @@ function setup() {
 
 
 function draw() {
-    
+    console.log(player.bullets.length)
     if(millis() % 10 == 0){
         
         cars.push(new Enemy(random(width*0.25,width*0.75)));
@@ -47,12 +47,14 @@ function draw() {
     for(let car of cars){
         car.display();
     }
-    
+
     fill(255);
     textSize(25);
     text("Score : " + score, width /2, height /10);
     
     player.display();
-    
+        for(let bullet of player.bullets){
+        bullet.display();
+    }
     
 }
