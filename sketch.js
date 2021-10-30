@@ -28,7 +28,7 @@ function setup() {
 
 function draw() {
     
-    if(millis() % 15 == 0){
+    if(millis() % 5 == 0){
         
         cars.push(Enemy.prototype.spawn());
         
