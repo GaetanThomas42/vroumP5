@@ -12,7 +12,7 @@ function setup() {
     createCanvas(width,height);
     imageMode(CENTER);
     rectMode(CENTER);
-    for (var i = 0; i < 1; i++) { //Boucle pour load images planétes
+    for (var i = 0; i < 6; i++) { //Boucle pour load images planétes
         images.push(loadImage(`images/car${i}.png`));
     }
 
@@ -27,12 +27,8 @@ function setup() {
 
 
 function draw() {
-    
-    if(millis() % 5 == 0){
         
-        cars.push(Enemy.prototype.spawn());
-        
-    }
+    Enemy.prototype.spawn()
     
     background(190);
     fill(100);
@@ -47,12 +43,7 @@ function draw() {
         car.display();
     }
     
-    let s = map(player.initialSpeed - player.speed,1,player.initialSpeed,0,255)
-    fill(s,0,0); 
-    line(width*0.04, height *0.1,map(player.initialSpeed - player.speed,1,player.initialSpeed,-width*0.01,height*0.1),0);
-    textSize(width/40);
-    let kmH = parseInt(map(player.initialSpeed - player.speed,1,player.initialSpeed,0,200));
-    text(kmH, width*0.02, height *0.13);
+    displaySpeed();
     player.display();
     
     
